@@ -61,7 +61,7 @@ SELECT
     px.maintenance
 FROM silver.crm_prd_info AS pa
 LEFT JOIN silver.erp_px_cat_g1v2 AS px
-    ON pa.cat_id = px.id   -- تم التصحيح هنا لربط الـ cat_id مع الـ id
+    ON pa.cat_id = px.id   
 WHERE pa.prd_end_dt IS NULL;
 GO
 

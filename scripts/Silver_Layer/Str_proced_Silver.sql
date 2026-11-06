@@ -227,7 +227,7 @@ BEGIN
         SET @end_time = GETDATE();
         PRINT 'Load duration: ' + CAST(DATEDIFF(second, @start_time, @end_time) as NVARCHAR) + ' seconds';
 
-        -- إجمالي وقت التنفيذ للـ Batch بالكامل
+        -- Full batching time 
         SET @batch_end_time = GETDATE();
         PRINT '----------------------------------------';
         PRINT 'Full Silver Layer load duration: ' + CAST(DATEDIFF(second, @batch_start_time, @batch_end_time) as NVARCHAR) + ' seconds';

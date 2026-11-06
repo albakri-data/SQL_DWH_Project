@@ -61,10 +61,10 @@ CREATE TABLE silver.crm_prd_info (
     prd_end_dt DATETIME,
     dwh_create_time datetime2 default getdate() 
 );
---After filtering data the following gonna be edited :
+/* After filtering data the following gonna be edited :
   prd_start_dt DATETIME >>> Date,
     prd_end_dt DATETIME >>> Date,
-++ adding : cat_id NVARCHAR(50)
+++ adding : cat_id NVARCHAR(50) */
 
 truncate table silver.crm_prd_info ;
 INSERT INTO silver.crm_prd_info (
@@ -124,7 +124,7 @@ WHERE sls_sales != sls_quantity * sls_price     /* which means "execute if :" */
 ORDER BY sls_sales, sls_quantity, sls_price
 
 
- -- Edit data types 
+ -- Editing on data types 
 
 
 IF OBJECT_ID('silver.crm_sales_details', 'U') IS NOT NULL
@@ -210,8 +210,8 @@ case when bdate >getdate()
 then null
 else bdate
 end as bdate,
--- For testing 
-/*select distinct gen
+/* For testing 
+select distinct gen
 from [bronze].[erp_cust_az12];
 */
 case when upper(trim(gen)) in ('F','Female')

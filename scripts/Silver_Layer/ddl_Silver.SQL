@@ -1,5 +1,4 @@
-NOTE: When copying this code , delete the comments 
-
+ 
 ------ CRM1
 --Data types will be reviewed when filtering data ends .
 IF OBJECT_ID('silver.erp_cust_az12', 'U') IS NOT NULL
